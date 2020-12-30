@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  php:
+    image: "php:7.4-fpm-alpine"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - selenium-hub
+
+  selenium-hub:
+    image: selenium/hub:4.0.0-alpha-6-20200730
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+
+  chrome:
+    image: selenium/node-chrome:4.0.0-alpha-6-20200730
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    ports:
+      - "5900:5900"
+    environment:
+      - HUB_HOST=selenium-hub

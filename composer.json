@@ -1,0 +1,20 @@
+{
+    "name": "ahmed.ibrahim/jenkins-cpt",
+    "description": "Run declarative jenkins job",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ahmed Ibrahim",
+            "email": "ahmedalaa333@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "lmc/steward": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
